@@ -7,8 +7,8 @@ dlgtitle = 'Parabola Calculator';
 dims = [1 35];
 userinput = inputdlg(prompt,dlgtitle,dims)
 
-xbounds = (str2double(userinput{1,1}))/2
-ybounds = str2double(userinput{2,1})
+xbounds = (str2double(userinput{2,1}))/2
+ybounds = str2double(userinput{1,1})
 
 xpos = {-xbounds,0,xbounds}
 ypos = {ybounds,0,ybounds}
@@ -21,3 +21,5 @@ parabola_equation = simplify(((x-xpos{2})*(x-xpos{3}))/((xpos{1}-xpos{2})*(xpos{
 coefficient = parabola_equation/(x^2)
 
 focus_height = 1/(4*coefficient)
+
+mbox = msgbox(sprintf("For a parabola of height %f units and width %f units, the focus will be located %f units above the minimum point.",ybounds,(2*xbounds),focus_height));
